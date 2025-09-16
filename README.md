@@ -1,8 +1,8 @@
 numabench
 ===================
-Random access DRAM latency benchmark (no pointer chasing).
+This is a microbenchmark to study the performance of Linux's NUMA balancing.
 - Memory is split into per-thread contiguous chunks (assumes 4 KiB pages).
-- Each thread repeatedly computes a random address and measures the load latency.
+- Each thread repeatedly computes a random within the chunk, loads it, and measures the latency.
 - With -R <pct>, a fraction of accesses target another thread's chunk (remote-by-owner).
 - Threads run continuously; a reporter prints average latency per thread every interval.
 
